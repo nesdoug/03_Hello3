@@ -15,9 +15,9 @@
 	.import		_ppu_wait_nmi
 	.import		_ppu_on_all
 	.import		_set_vram_buffer
+	.import		_one_vram_buffer
 	.import		_multi_vram_buffer_horz
 	.import		_multi_vram_buffer_vert
-	.import		_one_vram_buffer
 	.import		_clear_vram_buffer
 	.import		_get_ppu_addr
 	.export		_palette
