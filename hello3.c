@@ -69,9 +69,6 @@ void main (void) {
 	// now fill the vram_buffer
 	
 	set_vram_buffer(); // points ppu update to vram_buffer, do this at least once
-	
-	clear_vram_buffer(); // resets the index to zero, to start filling the buffer
-						 // do this at the beginning of every frame
 						 
 	one_vram_buffer(LETTERA, NTADR_A(2,3)); // pushes 1 byte worth of data to the vram_buffer
 	one_vram_buffer(0x42, NTADR_A(5,6)); // another 1 byte write, letter B
@@ -91,8 +88,6 @@ void main (void) {
 	// do not try to push much more than 30 non-sequential or 70 sequential bytes at once
 	
 	ppu_wait_nmi(); // waits till nmi, and push new updates to the ppu
-	
-	clear_vram_buffer(); // clear the buffer at the start of each frame
 	
 	
 	while (1){
